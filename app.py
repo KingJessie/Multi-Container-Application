@@ -1,11 +1,13 @@
 from flask import Flask
 import redis
+import os
 
 
 app = Flask(__name__)
 
-
-redis_client = redis.Redis(host='redis', port=6379)
+REDIS_HOST = os.getenv('REDIS_HOST', 'redis')
+REDIS_PORT = int(os.getenv('REDIS_PORT', 6379))
+redis_client = redis.Redis(host=REDIS_HOST, port=REDIS_PORT)
 
 
 @app.route('/')
