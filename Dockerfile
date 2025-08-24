@@ -1,11 +1,46 @@
-From python:3.8-slim
+FROM python:3.8-slim
 
 WORKDIR /app
 
 COPY . .
 
-RUN pip install flask redis
+RUN apt-get update && apt-get install -y \
+    gcc \
+    python3-dev \
+    libmariadb-dev \
+    pkg-config
 
-EXPOSE 5004
+RUN pip install flask mysqlclient
+
+EXPOSE 5003
+
+CMD ["python", "app.py"]
+
+
+# Stage 1: Build Stage
+
+From python:3.8-slim as Build
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y \
+    gcc \
+    python3-dev \
+    libmariadb-dev \
+    pkg-config
+
+COPY . .
+
+RUN pip install flask mysqlclient
+
+# Stage 2: Production Stage
+
+FROM python:3.8-slim
+
+WORKDIR /app
+
+COPY --from=Build /app /app/
+
+EXPOSE 5003
 
 CMD ["python", "app.py"]
