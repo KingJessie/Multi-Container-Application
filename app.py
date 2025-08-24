@@ -9,13 +9,13 @@ redis_client = redis.Redis(host='redis', port=6379)
 
 
 @app.route('/')
-def hello_world():
-    return 'Hello, World!'
+def welcome():
+    return 'Welcome to the Visitor Counter App Challenge! by CoderCo'
  
 @app.route('/count')   
 def count_visitor():   
     visitor_count = redis_client.incr('visitor_count')
-    return f'Visitor count: {visitor_count}'
+    return f'This page has been visited {visitor_count} times'
 
 
 if __name__ == '__main__':
