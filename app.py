@@ -10,7 +10,7 @@ redis_client = redis.Redis(host='redis', port=6379)
 
 @app.route('/')
 def welcome():
-    return 'Welcome to the Visitor Counter App Challenge! by CoderCo'
+    return 'Welcome to the Coderco Visitor Counter Challenge'
  
 @app.route('/count')   
 def count_visitor():   

@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5004:5004"
+    depends_on:
+      - redis
+
+  redis:
+      image: redis:latest
+      platform: linux/arm64/v8
+      ports:
+        - "6379:6379"
