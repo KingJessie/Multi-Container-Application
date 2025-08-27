@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask Visitor Counter</title>
     <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=McLaren&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <h1>Welcome to the Flask Visitor Counter!</h1>
         <p>This is a multi-container Flask app using Redis.</p>
         <a href="/count" class="counter-link">See Visitor Count</a>
+        <img src="{{ url_for('static', filename='images/panda.png') }}" alt="Panda" class="panda">
     </div>
 </body>
 </html>

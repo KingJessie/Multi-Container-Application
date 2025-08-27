@@ -1,0 +1,133 @@
+:root {
+  --color-background: #F5CAC3;        
+  --color-browser: #84A59D;           
+  --color-browser-top: #789B93;     
+  --color-browser-dot: #CFE0DB; 
+  --color-page: #F7EDE2;           
+  --color-element: #C6CDD2;       
+  --text: #222;
+}
+
+/* Body */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: var(--color-background);
+  display: grid;
+  place-items: center;
+  font-family: 'McLaren';
+  color: var(--text);
+}
+
+/* Browser mock container */
+.container {
+  position: relative;
+  width: min(900px, 80vw);
+  aspect-ratio: 1000 / 700;  
+  background: var(--color-browser);
+  border-radius: 24px;
+  box-shadow: 0 24px 48px rgba(0,0,0,.18);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background:
+    radial-gradient(circle, var(--color-browser-dot) 70%, transparent 72%) 28px 28px / 12px 12px no-repeat,
+    radial-gradient(circle, var(--color-browser-dot) 70%, transparent 72%) 56px 28px / 12px 12px no-repeat,
+    radial-gradient(circle, var(--color-browser-dot) 70%, transparent 72%) 84px 28px / 12px 12px no-repeat,
+    var(--color-browser-top);
+}
+
+
+.container::after {
+  content: "";
+  position: absolute;
+  left: 56px;
+  right: 56px;
+  top: 88px;
+  bottom: 40px;
+  background: var(--color-element);
+  border: 28px solid var(--color-page);
+  border-radius: 18px;
+  z-index: 0;
+}
+
+
+.container > * {
+  position: relative;
+  z-index: 1;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/* Headings and text */
+.container h1 {
+  font-size: clamp(24px, 4vw, 44px);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.container p {
+  margin: 8px 0 20px 0;
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+/* Visitor count */
+.count {
+  font-weight: 800;
+  font-size: clamp(48px, 10vw, 120px);
+  line-height: 1;
+  margin: 20px 0;
+}
+
+/* Buttons */
+.counter-link,
+.home-link {
+  display: inline-block;
+  padding: 16px 28px;        
+  background: #b298dc;       
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.1rem;      
+  transition: transform 0.05s ease, filter 0.2s ease, background-color 0.2s ease;
+  margin-top: 20px;
+}
+
+/* Hover */
+.counter-link:hover,
+.home-link:hover {
+  filter: brightness(.85);
+}
+
+/* Clicked */
+.counter-link:active,
+.home-link:active {
+  transform: translateY(1px);
+  background: #a2d2ff;  
+}
+
+/* Panda image */
+.panda {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 180px;        
+  z-index: 2;           
+}
