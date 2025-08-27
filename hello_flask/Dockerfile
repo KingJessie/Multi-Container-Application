@@ -17,6 +17,8 @@ EXPOSE 5003
 CMD ["python", "app.py"]
 
 
+# Making Our Image Lighter with Multistage Builds
+
 # Stage 1: Build Stage
 
 From python:3.8-slim as Build
