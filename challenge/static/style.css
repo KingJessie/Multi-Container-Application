@@ -1,5 +1,4 @@
-:root {
-  --color-background: #F5CAC3;        
+:root {       
   --color-browser: #84A59D;           
   --color-browser-top: #789B93;     
   --color-browser-dot: #CFE0DB; 
@@ -15,7 +14,9 @@ html, body {
   padding: 0;
 }
 body {
-  background: var(--color-background);
+  background-image: url("/static/images/panda-bg.png");
+  background-repeat: repeat;
+  background-size: 500px 500px;
   display: grid;
   place-items: center;
   font-family: 'McLaren';
@@ -100,7 +101,7 @@ body {
 .home-link {
   display: inline-block;
   padding: 16px 28px;        
-  background: #b298dc;       
+  background: #1e96fc;       
   color: #fff;
   text-decoration: none;
   border-radius: 10px;
