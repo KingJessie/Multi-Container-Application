@@ -64,7 +64,7 @@ cd Multi-Container-Application
 
 Here’s what the Visitor Counter App looks like when running:
 
-https://github.com/KingJessie/Multi-Container-Application/issues/1#issue-3375146626
+https://github.com/user-attachments/assets/a4a2d290-f1dc-42eb-b364-a30b93905bd5
 
 
 ![Visitor Counter Screenshot](assets/img1.png)
