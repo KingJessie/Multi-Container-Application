@@ -3,7 +3,8 @@
 ## Intro
 This repo contains two Flask apps, both containerised with Docker:
 - Hello World App – a minimal Flask service that returns "Hello, world!".
-- Visitor Counter App – a Flask application running in multiple containers with Redis for persistent storage and Nginx as a reverse proxy. It records total visits and displays a bar chart of the past 7 days.
+- Visitor Counter App – A Flask application deployed with Docker Compose across multiple containers, using Redis for persistent storage and Nginx as a reverse proxy. The app records total visits and displays a bar chart of visits over the past 7 days.
+
 
 ## Project Structure
 ```shell
